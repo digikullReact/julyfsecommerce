@@ -8,17 +8,24 @@ import { useState } from 'react';
 
 function App() {
   const [state,setState]=useState([]);
+  const [productCount,setProductCount]=useState(0);
 
   const AddToCart=(title)=>{
   
     setState([...state,title]);
 
   }
+
+  const dataCount=(length)=>{
+    setProductCount(length);
+  
+  // console.log("product length",length)
+  }
   return (
     <div className="App">
-      <Header state={state}/>
+      <Header state={state} productCount={productCount}/>
       <Banner/>
-      <ProductList AddToCart={AddToCart}/>
+      <ProductList AddToCart={AddToCart} dataCount={dataCount}/>
 
       <Footer/>
     

@@ -1,7 +1,15 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Product from './Product';
 
 const ProductList = (props) => {
+
+useEffect(()=>{
+
+  props.dataCount(state.length)
+
+},[])
+
+
   const [state,setState]=useState([
     {
       "id": 1,

@@ -30,7 +30,7 @@ const Header = (props) => {
           </li>
           <li className="nav-item">
             <Cart cart={props.state}/>
-            
+           <li>{props.productCount}</li>            
           </li>
          
 
