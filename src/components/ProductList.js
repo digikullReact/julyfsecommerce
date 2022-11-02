@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import Product from './Product';
 
-const ProductList = () => {
+const ProductList = (props) => {
   const [state,setState]=useState([
     {
       "id": 1,
@@ -375,8 +375,8 @@ const ProductList = () => {
       {
 
         state.map(ele=>(
-          <div className={"col-4"}>
-            <Product image={ele.thumbnail} title={ele.title} description={ele.description}/>
+          <div className={"col-4"} >
+            <Product image={ele.thumbnail} title={ele.title} description={ele.description} AddToCart={props.AddToCart} />
 
 
           </div>

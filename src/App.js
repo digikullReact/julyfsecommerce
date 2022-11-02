@@ -4,13 +4,21 @@ import Header from './components/Header';
 import Banner from "./components/Banner"
 import ProductList from "./components/ProductList"
 import Footer from "./components/Footer"
+import { useState } from 'react';
 
 function App() {
+  const [state,setState]=useState([]);
+
+  const AddToCart=(title)=>{
+  
+    setState([...state,title]);
+
+  }
   return (
     <div className="App">
-      <Header/>
+      <Header state={state}/>
       <Banner/>
-      <ProductList/>
+      <ProductList AddToCart={AddToCart}/>
 
       <Footer/>
     
